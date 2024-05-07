@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET Request Receiver</title>
+    <script>
+        // Function to handle incoming GET requests
+        function handleIncomingGetRequest(data) {
+            // Display the received data on the page
+            document.getElementById('received-data').innerText = data;
+        }
+
+        // Check if there are incoming GET parameters in the URL
+        const queryString = window.location.search;
+        if (queryString) {
+            // Parse the query string to get the parameters
+            const urlParams = new URLSearchParams(queryString);
+            // Get the value of the 'data' parameter
+            const data = urlParams.get('data');
+            // Handle the incoming GET request
+            handleIncomingGetRequest(data);
+        }
+    </script>
+</head>
+<body>
+    <h1>GET Request Receiver</h1>
+    <p>Received data:</p>
+    <p id="received-data"></p>
+</body>
+</html>
